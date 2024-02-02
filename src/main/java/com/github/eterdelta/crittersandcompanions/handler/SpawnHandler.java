@@ -92,16 +92,14 @@ public class SpawnHandler {
         modifierMap.put(new ResourceLocation(CrittersAndCompanions.MODID, "add_forests_spawns"),
                 createSpawnModifier(registry.getOrCreateTag(BiomeTags.IS_FOREST),
                         new MobSpawnSettings.SpawnerData(CACEntities.LEAF_INSECT.get(), 12, 1, 1),
-                        new MobSpawnSettings.SpawnerData(CACEntities.FERRET.get(), 3, 2, 3),
-                        new MobSpawnSettings.SpawnerData(CACEntities.JUMPING_SPIDER.get(), 2, 1, 1)
+                        new MobSpawnSettings.SpawnerData(CACEntities.FERRET.get(), 3, 2, 3)
                 )
         );
 
         modifierMap.put(new ResourceLocation(CrittersAndCompanions.MODID, "add_jungles_spawns"),
                 createSpawnModifier(registry.getOrCreateTag(BiomeTags.IS_JUNGLE),
                         new MobSpawnSettings.SpawnerData(CACEntities.LEAF_INSECT.get(), 12, 1, 1),
-                        new MobSpawnSettings.SpawnerData(CACEntities.RED_PANDA.get(), 8, 1, 2),
-                        new MobSpawnSettings.SpawnerData(CACEntities.JUMPING_SPIDER.get(), 2, 1, 1)
+                        new MobSpawnSettings.SpawnerData(CACEntities.RED_PANDA.get(), 8, 1, 2)
                 )
         );
 
@@ -118,8 +116,7 @@ public class SpawnHandler {
         );
 
         modifierMap.put(new ResourceLocation(CrittersAndCompanions.MODID, "add_lush_caves_spawns"),
-                createSpawnModifier(getBiomeHolderSet(registry, Biomes.LUSH_CAVES),
-                        new MobSpawnSettings.SpawnerData(CACEntities.JUMPING_SPIDER.get(), 2, 1, 1)
+                createSpawnModifier(getBiomeHolderSet(registry, Biomes.LUSH_CAVES)
                 )
         );
 

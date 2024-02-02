@@ -1,9 +1,7 @@
 package com.github.eterdelta.crittersandcompanions;
 
 import com.github.eterdelta.crittersandcompanions.client.model.BubbleModel;
-import com.github.eterdelta.crittersandcompanions.client.model.GrapplingHookModel;
 import com.github.eterdelta.crittersandcompanions.client.renderer.BubbleLayer;
-import com.github.eterdelta.crittersandcompanions.client.renderer.GrapplingHookRenderer;
 import com.github.eterdelta.crittersandcompanions.client.renderer.geo.entity.*;
 import com.github.eterdelta.crittersandcompanions.entity.*;
 import com.github.eterdelta.crittersandcompanions.handler.SpawnHandler;
@@ -120,7 +118,6 @@ public class CrittersAndCompanions {
 
     private void onAttributeCreation(EntityAttributeCreationEvent event) {
         event.put(CACEntities.OTTER.get(), OtterEntity.createAttributes().build());
-        event.put(CACEntities.JUMPING_SPIDER.get(), JumpingSpiderEntity.createAttributes().build());
         event.put(CACEntities.KOI_FISH.get(), KoiFishEntity.createAttributes().build());
         event.put(CACEntities.DRAGONFLY.get(), DragonflyEntity.createAttributes().build());
         event.put(CACEntities.SEA_BUNNY.get(), SeaBunnyEntity.createAttributes().build());
@@ -133,13 +130,11 @@ public class CrittersAndCompanions {
 
     public void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(CACEntities.OTTER.get(), OtterRenderer::new);
-        event.registerEntityRenderer(CACEntities.JUMPING_SPIDER.get(), JumpingSpiderRenderer::new);
         event.registerEntityRenderer(CACEntities.KOI_FISH.get(), KoiFishRenderer::new);
         event.registerEntityRenderer(CACEntities.DRAGONFLY.get(), DragonflyRenderer::new);
         event.registerEntityRenderer(CACEntities.SEA_BUNNY.get(), SeaBunnyRenderer::new);
         event.registerEntityRenderer(CACEntities.SHIMA_ENAGA.get(), ShimaEnagaRenderer::new);
         event.registerEntityRenderer(CACEntities.FERRET.get(), FerretRenderer::new);
-        event.registerEntityRenderer(CACEntities.GRAPPLING_HOOK.get(), GrapplingHookRenderer::new);
         event.registerEntityRenderer(CACEntities.DUMBO_OCTOPUS.get(), DumboOctopusRenderer::new);
         event.registerEntityRenderer(CACEntities.LEAF_INSECT.get(), LeafInsectRenderer::new);
         event.registerEntityRenderer(CACEntities.RED_PANDA.get(), RedPandaRenderer::new);
@@ -147,7 +142,6 @@ public class CrittersAndCompanions {
 
     public void registerEntityLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(BubbleLayer.LAYER_LOCATION, BubbleModel::createLayer);
-        event.registerLayerDefinition(GrapplingHookRenderer.LAYER_LOCATION, GrapplingHookModel::createLayer);
     }
 
     @OnlyIn(Dist.CLIENT)

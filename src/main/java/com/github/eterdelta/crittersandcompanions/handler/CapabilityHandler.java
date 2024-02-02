@@ -31,32 +31,6 @@ public class CapabilityHandler {
                 }
             };
             event.addCapability(new ResourceLocation(CrittersAndCompanions.MODID, "bubble_state"), bubbleStateProvider);
-
-            LazyOptional<IGrapplingStateCapability> grapplingState = LazyOptional.of(GrapplingState::new);
-            ICapabilityProvider grapplingStateProvider = new ICapabilityProvider() {
-                @Override
-                public <T> LazyOptional<T> getCapability(Capability<T> capability, Direction direction) {
-                    if (capability == CACCapabilities.GRAPPLING_STATE) {
-                        return grapplingState.cast();
-                    }
-                    return LazyOptional.empty();
-                }
-            };
-            event.addCapability(new ResourceLocation(CrittersAndCompanions.MODID, "grappling_state"), grapplingStateProvider);
-        }
-
-        if (event.getObject() instanceof LivingEntity) {
-            LazyOptional<ISilkLeashStateCapability> optionalSilkLeashState = LazyOptional.of(SilkLeashState::new);
-            ICapabilityProvider silkLeashStateProvider = new ICapabilityProvider() {
-                @Override
-                public <T> LazyOptional<T> getCapability(Capability<T> capability, Direction direction) {
-                    if (capability == CACCapabilities.SILK_LEASH_STATE) {
-                        return optionalSilkLeashState.cast();
-                    }
-                    return LazyOptional.empty();
-                }
-            };
-            event.addCapability(new ResourceLocation(CrittersAndCompanions.MODID, "silk_leash_state"), silkLeashStateProvider);
         }
     }
 }
